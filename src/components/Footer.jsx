@@ -44,7 +44,6 @@ function Footer() {
             <ul>
               <li><a href="#about">About Our Brokers</a></li>
               <li><a href="#process">How It Works</a></li>
-              <li><a href="#testimonials">Client Reviews</a></li>
               <li><a href="#contact">Contact a Broker</a></li>
             </ul>
           </div>

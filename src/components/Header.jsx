@@ -16,7 +16,6 @@ function Header() {
     { href: '#services', label: 'Broker Services' },
     { href: '#about', label: 'Why Us' },
     { href: '#process', label: 'How It Works' },
-    { href: '#testimonials', label: 'Reviews' },
     { href: '#contact', label: 'Contact' },
   ]
 

@@ -4,7 +4,6 @@ import TrustBar from './components/TrustBar'
 import Services from './components/Services'
 import About from './components/About'
 import Process from './components/Process'
-import Testimonials from './components/Testimonials'
 import CTA from './components/CTA'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -19,7 +18,6 @@ function App() {
         <Services />
         <About />
         <Process />
-        <Testimonials />
         <CTA />
         <Contact />
       </main>
