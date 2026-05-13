@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nitin Awasthi | SNSN Fintech - Mortgage Broker</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0f2b4a;
+      --primary-light: #1a4a7a;
+      --accent: #0ea5e9;
+      --accent-hover: #0284c7;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --bg: #f8fafc;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .vcard {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Header */
+    .vcard__header {
+      position: relative;
+      background: linear-gradient(160deg, #050d1a 0%, var(--primary) 40%, var(--primary-light) 100%);
+      padding: 2.5rem 2rem 3.5rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .vcard__header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+    }
+
+    .vcard__orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.4;
+    }
+
+    .vcard__orb--1 {
+      width: 200px;
+      height: 200px;
+      background: rgba(14, 165, 233, 0.3);
+      top: -80px;
+      right: -60px;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .vcard__orb--2 {
+      width: 150px;
+      height: 150px;
+      background: rgba(56, 189, 248, 0.2);
+      bottom: -60px;
+      left: -40px;
+      animation: float 6s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .vcard__avatar {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, var(--accent), #38bdf8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.3);
+    }
+
+    .vcard__name {
+      position: relative;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .vcard__title {
+      position: relative;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.5rem;
+    }
+
+    .vcard__company {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.375rem 1rem;
+      background: rgba(14, 165, 233, 0.12);
+      border: 1px solid rgba(14, 165, 233, 0.25);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .vcard__company-dot {
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+    }
+
+    /* Body */
+    .vcard__body {
+      padding: 2rem;
+    }
+
+    .vcard__section-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .vcard__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .vcard__link {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.875rem 1rem;
+      background: var(--bg);
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .vcard__link:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .vcard__link-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(14, 165, 233, 0.08);
+      border-radius: 10px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .vcard__link-text {
+      flex: 1;
+    }
+
+    .vcard__link-label {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .vcard__link-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .vcard__link-arrow {
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    .vcard__link:hover .vcard__link-arrow {
+      transform: translateX(3px);
+      color: var(--accent);
+    }
+
+    /* Services */
+    .vcard__services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .vcard__service-tag {
+      padding: 0.375rem 0.75rem;
+      background: var(--bg);
+      border: 1px solid #e2e8f0;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* CTA */
+    .vcard__cta {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--accent), #38bdf8);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: center;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+    }
+
+    .vcard__cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
+    }
+
+    .vcard__save {
+      display: block;
+      width: 100%;
+      padding: 0.875rem;
+      margin-top: 0.75rem;
+      background: transparent;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      border: 1.5px solid rgba(14, 165, 233, 0.3);
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .vcard__save:hover {
+      background: rgba(14, 165, 233, 0.05);
+      border-color: var(--accent);
+    }
+
+    /* Footer */
+    .vcard__footer {
+      text-align: center;
+      padding: 1.25rem 2rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .vcard__footer p {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="vcard">
+    <!-- Header -->
+    <div class="vcard__header">
+      <div class="vcard__orb vcard__orb--1"></div>
+      <div class="vcard__orb vcard__orb--2"></div>
+      <div class="vcard__avatar">NA</div>
+      <h1 class="vcard__name">Nitin Awasthi</h1>
+      <p class="vcard__title">Mortgage Broker</p>
+      <div class="vcard__company">
+        <span class="vcard__company-dot"></span>
+        SNSN Fintech
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="vcard__body">
+      <p class="vcard__section-title">Contact</p>
+      <div class="vcard__links">
+        <a href="tel:+61494041739" class="vcard__link">
+          <div class="vcard__link-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <div class="vcard__link-text">
+            <span class="vcard__link-label">Phone</span>
+            <span class="vcard__link-value">+61 494 041 739</span>
+          </div>
+          <svg class="vcard__link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:nitin@snsnfintech.com.au" class="vcard__link">
+          <div class="vcard__link-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="vcard__link-text">
+            <span class="vcard__link-label">Email</span>
+            <span class="vcard__link-value">nitin@snsnfintech.com.au</span>
+          </div>
+          <svg class="vcard__link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://niawasth.github.io/niawasth/" class="vcard__link">
+          <div class="vcard__link-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <div class="vcard__link-text">
+            <span class="vcard__link-label">Website</span>
+            <span class="vcard__link-value">snsnfintech.com.au</span>
+          </div>
+          <svg class="vcard__link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <p class="vcard__section-title">Mortgage Broker Services</p>
+      <div class="vcard__services">
+        <span class="vcard__service-tag">First Home Buyers</span>
+        <span class="vcard__service-tag">Refinancing</span>
+        <span class="vcard__service-tag">Investment Loans</span>
+        <span class="vcard__service-tag">Construction Loans</span>
+        <span class="vcard__service-tag">Commercial Loans</span>
+        <span class="vcard__service-tag">Insurance</span>
+      </div>
+
+      <a href="https://niawasth.github.io/niawasth/#contact" class="vcard__cta">
+        Book Free Consultation
+      </a>
+      <button class="vcard__save" onclick="saveContact()">
+        💾 Save to Contacts
+      </button>
+      <button class="vcard__save" onclick="downloadImage()" style="margin-top: 0.5rem;">
+        🖼️ Download as Image
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="vcard__footer">
+      <p>SNSN Fintech Pty Ltd · Australian Credit Licence Holder<br/>Mortgage Broker · Sydney, Australia</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    function saveContact() {
+      const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Nitin Awasthi
+ORG:SNSN Fintech Pty Ltd
+TITLE:Mortgage Broker
+TEL;TYPE=CELL:+61494041739
+EMAIL:nitin@snsnfintech.com.au
+URL:https://niawasth.github.io/niawasth/
+NOTE:Mortgage Broker - SNSN Fintech. Helping Australians find the best home loan deals.
+END:VCARD`;
+
+      const blob = new Blob([vcard], { type: 'text/vcard' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Nitin_Awasthi_SNSN_Fintech.vcf';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function downloadImage() {
+      const card = document.querySelector('.vcard');
+      html2canvas(card, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#f8fafc'
+      }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'Nitin_Awasthi_SNSN_Fintech.jpg';
+        link.href = canvas.toDataURL('image/jpeg', 0.95);
+        link.click();
+      });
+    }
+  </script>
+</body>
+</html>
