@@ -45,24 +45,24 @@ function About() {
           <div className="about__visual">
             <div className="about__bento">
               <div className="about__bento-item about__bento-item--large">
-                <strong>$300M+</strong>
-                <span>Home Loans Settled by Our Mortgage Brokers</span>
-              </div>
-              <div className="about__bento-item">
-                <strong>500+</strong>
-                <span>Happy Clients</span>
-              </div>
-              <div className="about__bento-item">
                 <strong>40+</strong>
-                <span>Lender Panel</span>
+                <span>Australian Lenders on Our Panel</span>
               </div>
-              <div className="about__bento-item about__bento-item--accent">
-                <strong>10+</strong>
-                <span>Years as Mortgage Brokers</span>
+              <div className="about__bento-item">
+                <strong>24hr</strong>
+                <span>Pre-Approval</span>
               </div>
               <div className="about__bento-item">
                 <strong>$0</strong>
-                <span>Cost to You</span>
+                <span>Broker Fee to You</span>
+              </div>
+              <div className="about__bento-item about__bento-item--accent">
+                <strong>100%</strong>
+                <span>Independent & Unbiased</span>
+              </div>
+              <div className="about__bento-item">
+                <strong>5★</strong>
+                <span>Service Guarantee</span>
               </div>
             </div>
           </div>

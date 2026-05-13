@@ -29,11 +29,6 @@
 .header__logo-img {
   height: 32px;
   width: auto;
-  transition: filter var(--transition);
-}
-
-.header:not(.header--scrolled) .header__logo-img {
-  filter: brightness(0) invert(1);
 }
 
 .header__nav {

@@ -24,7 +24,7 @@ function Header() {
       <div className="container header__inner">
         <a href="#home" className="header__logo">
           <img
-            src={`${import.meta.env.BASE_URL}logo.svg`}
+            src={`${import.meta.env.BASE_URL}${scrolled ? 'logo.svg' : 'logo-white.svg'}`}
             alt="SNSN Fintech - Mortgage Brokers"
             className="header__logo-img"
           />
